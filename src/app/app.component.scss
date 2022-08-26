@@ -1,0 +1,38 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  gap: 12px;
+
+  div {
+    max-height: 300px;
+    max-width: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+
+
+    &[scrollDirection="Horizontal"] {
+      flex-direction: row;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    p {
+      height: 100px;
+      width: 600px;
+      margin: 0;
+      padding: 0;
+      flex-shrink: 0;
+      border: 1px solid red;
+    }
+  }
+
+}
+
+
