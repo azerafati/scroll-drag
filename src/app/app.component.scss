@@ -30,6 +30,8 @@
       padding: 0;
       flex-shrink: 0;
       border: 1px solid red;
+      z-index: 1;
+      position: relative;
     }
   }
 
