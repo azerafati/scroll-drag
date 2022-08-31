@@ -1,6 +1,26 @@
-import { AfterViewInit, Directive, ElementRef, HostListener, Input, OnDestroy, OnInit, Renderer2 } from '@angular/core'
+import {
+  AfterViewInit,
+  Directive,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  Renderer2
+} from '@angular/core'
 import { Subject, Subscription, throttleTime } from "rxjs"
 import { Inertia } from "./inertia.class"
+
+enum Direction {
+  Top = 'top',
+  Bottom = 'bottom',
+  Right = 'right',
+  Left = 'left'
+}
+
+export type ShadowDir = { [key in Direction]: boolean }
 
 @Directive({
   selector: '[ngxScrollDrag]',
@@ -17,8 +37,18 @@ export class ScrollDragDirective implements OnInit, AfterViewInit, OnDestroy {
   @Input()
   scrollShadow = false
 
+  @Output()
+  shadowChange = new EventEmitter<{ direction: Direction, isShown: boolean }>()
+
   @Input()
   backgroundColor = 'white'
+
+  shadow: ShadowDir = {
+    [Direction.Top]: false,
+    [Direction.Bottom]: false,
+    [Direction.Right]: false,
+    [Direction.Left]: false,
+  }
 
   private dateScrollChange$ = new Subject<void>()
   private dateScrollChangeSubscription?: Subscription
@@ -100,10 +130,11 @@ export class ScrollDragDirective implements OnInit, AfterViewInit, OnDestroy {
           const scrollTop = Math.round(this.element.scrollTop / this.scrollDragSnap) * this.scrollDragSnap
           this.element.scrollTo({top: scrollTop, behavior: 'smooth'})
         }
+        this.setBoxShadowClass()
         if (this.scrollShadow) {
-          this.setBoxShadow(this.element)
+          this.setBackgroundShadow(this.element)
         } else {
-          this.renderer.setStyle(this.element, 'background', this.backgroundColor)
+          this.renderer.setStyle(this.element, 'background', null)
         }
       }
     )
@@ -124,7 +155,29 @@ export class ScrollDragDirective implements OnInit, AfterViewInit, OnDestroy {
     this.dateScrollChangeSubscription?.unsubscribe()
   }
 
-  private setBoxShadow(elm: HTMLElement): void {
+  private setBoxShadowClass(): void {
+    const edgeZoneSize = 5
+
+    if (this.scrollDirection === "Vertical") {
+      this.switchClass(this.element.scrollTop + this.element.clientHeight < this.element.scrollHeight - edgeZoneSize, Direction.Bottom)
+      this.switchClass(this.element.scrollTop > edgeZoneSize, Direction.Top)
+    } else {
+      this.switchClass(Math.abs(this.element.scrollLeft) > edgeZoneSize, Direction.Left)
+      // in RTL chrome desktop gets scrollLeft as a negative number unlike chrome mobile
+      this.switchClass(Math.abs(this.element.scrollLeft) + this.element.clientWidth < Math.abs(this.element.scrollWidth - edgeZoneSize), Direction.Right)
+    }
+
+    this.renderer.addClass(this.element, 'ngx-scroll-drag-shadow')
+
+  }
+
+  private switchClass(condition: boolean, direction: Direction): void {
+    const shadowClass = 'ngx-scroll-drag-shadow-' + direction
+    this.shadow[direction] = condition
+    this.renderer[condition ? 'addClass' : 'removeClass'](this.element, shadowClass)
+  }
+
+  private setBackgroundShadow(elm: HTMLElement): void {
     const shadowSize = '0.75em'
     const backgroundColor = this.backgroundColor
     const shadowColor = 'rgba(34,34,34, 0.5)'

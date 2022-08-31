@@ -1,0 +1,54 @@
+$color: rgb(0 0 0 / 50%);
+$shadowSize: 20;
+$shadowSizePx: $shadowSize + 0px;
+$size: 16px -#{$shadowSizePx};
+
+:host {
+  display: block;
+  position: relative;
+}
+
+div {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  transition: box-shadow 125ms ease-in-out;
+}
+
+div.shadow {
+  &-top {
+    width: 100%;
+    box-shadow: inset 0 $shadowSizePx $size $color;
+    height: $shadowSizePx;
+    top: 0;
+    left: 0;
+  }
+
+  &-bottom {
+    width: 100%;
+    box-shadow: inset 0 -20px $size $color;
+    height: $shadowSizePx;
+    bottom: 0;
+    left: 0;
+  }
+
+  &-left {
+    height: 100%;
+    box-shadow: inset 20px 0 $size $color;
+    width: $shadowSizePx;
+    left: 0;
+    top: 0;
+  }
+
+  &-right {
+    height: 100%;
+    box-shadow: inset -20px 0 $size $color;
+    width: $shadowSizePx;
+    right: 0;
+    top: 0;
+  }
+}
+
+div.hide-shadow {
+  box-shadow: none;
+}
