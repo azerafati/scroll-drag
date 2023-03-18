@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build ngx-scroll-drag && ng build",
+    "postbuild": "cp README.md dist/ngx-scroll-drag",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
