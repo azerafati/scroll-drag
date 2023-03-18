@@ -1,4 +1,4 @@
-# ScrollDrag
+# Angular Scroll Drag
 
 There are situations that it would be nice for the user to be able to also scroll using a mouse drag. That's why I
 created this angular library.
@@ -6,9 +6,14 @@ created this angular library.
 
 ## How to get started
 ```shell
-npm install -Save 
+npm i @azerafati/ngx-scroll-drag 
 ```
-Add `ngxScrollDrag` on a scrolling element, now that element can also be scrolled by a mouse drag. [**See the Demo**](https://azerafati.com/scroll-drag/)
+* Add `ngxScrollDrag` on a scrolling element, now that element can also be scrolled by a mouse drag.
+* The ScrollDrag Element can have a shadow if you add `[scrollShadow]="true"` indicating the out of view content. This uses background gradients which is perfect in most cases, unless the scrolling content is using complex z-index which might render on top of the shadow.
+* If you want to show scroll shadows and have z-index issues, wrap your scrolling element with `<ngx-scroll-shadow>` tag.
+
+[**See the Demo**](https://azerafati.com/scroll-drag/)
+
 
 
 ## Running unit tests
