@@ -1,17 +1,15 @@
 # ScrollDrag
 
 There are situations that it would be nice for the user to be able to also scroll using a mouse drag. That's why I
-created this angular directive.
+created this angular library.
+
+## How to get started
+
+just use the `ngxScrollDrag` on a scrolling element, now that element can also be scrolled by a mouse drag. look at the Demo 
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you
-change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also
-use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
 
 ## Build
 
