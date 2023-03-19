@@ -1,10 +1,14 @@
-# Angular Scroll Drag
+# Angular Scroll Drag Directive
 
-There are situations that it would be nice for the user to be able to also scroll using a mouse drag. That's why I
-created this angular library.
+[![Build Status](https://github.com/azerafati/scroll-drag/actions/workflows/test.yml/badge.svg)](https://github.com/azerafati/scroll-drag/actions)
+[![npm version](https://img.shields.io/npm/v/@azerafati/ngx-scroll-drag.svg)](https://www.npmjs.com/package/@azerafati/ngx-scroll-drag)
+[![Issues](https://img.shields.io/github/issues/azerafati/scroll-drag.svg)](https://github.com/azerafati/scroll-drag/issues)
+[![License](https://img.shields.io/github/license/azerafati/scroll-drag.svg)](#license)
+
+Scroll using mouse drag
 
 
-## How to get started
+## Getting started
 ```shell
 npm i @azerafati/ngx-scroll-drag 
 ```
