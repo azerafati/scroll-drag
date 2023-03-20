@@ -1,8 +1,9 @@
 name: Unit Tests
 
 on:
-  push:
-
+  pull_request:
+    branches:
+      - main
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -23,3 +24,6 @@ jobs:
 
       - name: Test
         run: npm test
+
+      - name: Coverage
+      - uses: ArtiomTr/jest-coverage-report-action@v2
