@@ -7,9 +7,6 @@ MIT
 @angular/platform-browser
 MIT
 
-@angular/router
-MIT
-
 @azerafati/ngx-scroll-drag
 
 rxjs
