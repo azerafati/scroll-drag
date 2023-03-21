@@ -3,7 +3,7 @@ name: Unit Tests
 on: push
 
 jobs:
-  test:
+  jest:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
