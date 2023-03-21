@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxScrollDragModule } from "ngx-scroll-drag";
 
@@ -11,7 +9,6 @@ import { NgxScrollDragModule } from "ngx-scroll-drag";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     NgxScrollDragModule
   ],
   providers: [],
