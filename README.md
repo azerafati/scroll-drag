@@ -1,16 +1,19 @@
 # Angular Scroll Drag Directive
 
 [![Build Status](https://github.com/azerafati/scroll-drag/actions/workflows/test.yml/badge.svg)](https://github.com/azerafati/scroll-drag/actions)
-[![npm version](https://img.shields.io/npm/v/@azerafati/ngx-scroll-drag.svg)](https://www.npmjs.com/package/@azerafati/ngx-scroll-drag)
+[![npm version](https://img.shields.io/npm/v/@azerafati/ngx-scroll-drag.svg?logo=npm&logoColor=fff&label=NPM+package&color=limegreen.svg)](https://www.npmjs.com/package/@azerafati/ngx-scroll-drag)
 [![Issues](https://img.shields.io/github/issues/azerafati/scroll-drag.svg)](https://github.com/azerafati/scroll-drag/issues)
+[![Issues](https://img.shields.io/npm/dt/@azerafati/ngx-scroll-drag.svg)](https://www.npmjs.com/package/@azerafati/ngx-scroll-drag)
+[![Issues](https://img.shields.io/codecov/c/github/azerafati/ngx-scroll-drag/main.svg?maxAge=43200)](https://www.npmjs.com/package/@azerafati/ngx-scroll-drag)
 [![License](https://img.shields.io/github/license/azerafati/scroll-drag.svg)](#license)
 
 Scroll using mouse drag
 
 
 ## Getting started
-```shell
-npm i @azerafati/ngx-scroll-drag 
+
+```
+npm i @azerafati/ngx-scroll-drag
 ```
 * Add `ngxScrollDrag` on a scrolling element, now that element can also be scrolled by a mouse drag.
 * The ScrollDrag Element can have a shadow if you add `[scrollShadow]="true"` indicating the out of view content. This uses background gradients which is perfect in most cases, unless the scrolling content is using complex z-index which might render on top of the shadow.
