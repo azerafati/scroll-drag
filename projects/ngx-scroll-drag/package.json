@@ -1,9 +1,9 @@
 {
   "name": "@azerafati/ngx-scroll-drag",
-  "version": "2.1.0",
+  "version": "15.0.0",
   "peerDependencies": {
-    "@angular/common": "^14.1.0",
-    "@angular/core": "^14.1.0"
+    "@angular/common": "^15.2.4",
+    "@angular/core": "^15.2.4"
   },
   "dependencies": {
     "tslib": "^2.3.0"
