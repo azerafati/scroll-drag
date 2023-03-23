@@ -1,6 +1,18 @@
 {
   "name": "@azerafati/ngx-scroll-drag",
   "version": "15.0.0",
+  "homepage": "https://azerafati.com/scroll-drag",
+  "keywords": [
+    "Angular",
+    "Scroll",
+    "Mouse",
+    "Drag",
+    "Shadow"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azerafati/scroll-drag.git"
+  },
   "peerDependencies": {
     "@angular/common": "^15.2.4",
     "@angular/core": "^15.2.4"
