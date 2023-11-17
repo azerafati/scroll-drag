@@ -43,6 +43,9 @@ export class ScrollDragDirective implements OnInit, AfterViewInit, OnDestroy {
   @Input()
   backgroundColor = 'white'
 
+  @Input()
+  disableDrag = false
+
   shadow: ShadowDir = {
     [Direction.Top]: false,
     [Direction.Bottom]: false,
@@ -77,6 +80,8 @@ export class ScrollDragDirective implements OnInit, AfterViewInit, OnDestroy {
 
   @HostListener("mousedown", ["$event"])
   startDrag(ev: MouseEvent): void {
+    if (this.disableDrag) return
+
     if (this.scrollDirection === 'Vertical') {
       this.startDragY = ev.clientY + this.element.scrollTop
     } else {
@@ -88,6 +93,8 @@ export class ScrollDragDirective implements OnInit, AfterViewInit, OnDestroy {
 
   @HostListener("mousemove", ["$event"])
   drag(ev: MouseEvent): void {
+    if (this.disableDrag) return
+
     this.isPressed = ev.buttons === 1
     if (this.isPressed) {
       if (this.scrollDirection === 'Vertical') {
@@ -101,6 +108,8 @@ export class ScrollDragDirective implements OnInit, AfterViewInit, OnDestroy {
 
   @HostListener("mouseleave", ["$event"])
   leave(ev: MouseEvent): void {
+    if (this.disableDrag) return
+
     if (this.isPressed) {
       this.inertia.startInertialMove(ev.clientX, ev.clientY)
     }
@@ -109,6 +118,8 @@ export class ScrollDragDirective implements OnInit, AfterViewInit, OnDestroy {
 
   @HostListener("mouseup", ["$event"])
   stopDrag(ev: MouseEvent): void {
+    if (this.disableDrag) return
+
     if (this.isPressed) {
       this.isPressed = false
       this.inertia.startInertialMove(ev.clientX, ev.clientY)
