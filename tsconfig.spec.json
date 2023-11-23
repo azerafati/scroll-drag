@@ -5,11 +5,13 @@
     "outDir": "./out-tsc/spec",
     "module": "CommonJs",
     "types": [
-      "jest"
+      "jest",
+      "node"
     ]
   },
   "include": [
-    "src/**/*.spec.ts",
-    "src/**/*.d.ts"
+    "**/*.spec.ts",
+    "**/*.d.ts",
+    "jest.config.js"
   ]
 }
