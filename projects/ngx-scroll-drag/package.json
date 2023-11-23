@@ -1,6 +1,6 @@
 {
   "name": "@azerafati/ngx-scroll-drag",
-  "version": "15.1.0",
+  "version": "15.2.0",
   "homepage": "https://azerafati.com/scroll-drag",
   "keywords": [
     "Angular",
@@ -14,8 +14,8 @@
     "url": "git+https://github.com/azerafati/scroll-drag.git"
   },
   "peerDependencies": {
-    "@angular/common": "^15.2.4",
-    "@angular/core": "^15.2.4"
+    "@angular/common": "~15.2.0",
+    "@angular/core": "~15.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
