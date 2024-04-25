@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "scroll-drag:build:production"
+              "buildTarget": "scroll-drag:build:production"
             },
             "development": {
-              "browserTarget": "scroll-drag:build:development"
+              "buildTarget": "scroll-drag:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "scroll-drag:build"
+            "buildTarget": "scroll-drag:build"
           }
         }
       }
