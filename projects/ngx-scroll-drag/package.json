@@ -14,8 +14,8 @@
     "url": "git+https://github.com/azerafati/scroll-drag.git"
   },
   "peerDependencies": {
-    "@angular/common": "~15.2.0",
-    "@angular/core": "~15.2.0"
+    "@angular/common": "~16.2.12",
+    "@angular/core": "~16.2.12"
   },
   "dependencies": {
     "tslib": "^2.3.0"
