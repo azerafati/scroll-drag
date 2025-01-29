@@ -1,12 +1,9 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import {AppComponent} from "./app/app.component";
+import {bootstrapApplication} from "@angular/platform-browser";
+import {appConfig} from "./app/app.config";
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
-
-if (environment.production) {
-  enableProdMode();
-}
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+bootstrapApplication(AppComponent, appConfig).catch(err =>
+  //default angular error handling
+  // eslint-disable-next-line no-console
+  console.error(err),
+)

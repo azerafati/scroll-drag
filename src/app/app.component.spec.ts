@@ -1,17 +1,13 @@
-import { TestBed } from '@angular/core/testing'
-import { RouterTestingModule } from '@angular/router/testing'
-import { AppComponent } from './app.component'
-import { NgxScrollDragModule } from 'ngx-scroll-drag'
+import {TestBed} from '@angular/core/testing'
+import {AppComponent} from './app.component'
+import {CommonModule} from "@angular/common";
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule,
-        NgxScrollDragModule
-      ],
-      declarations: [
-        AppComponent
+        AppComponent,
+        CommonModule
       ],
     }).compileComponents();
   });

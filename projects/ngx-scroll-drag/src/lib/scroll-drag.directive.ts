@@ -23,11 +23,12 @@ enum Direction {
 export type ShadowDir = { [key in Direction]: boolean }
 
 @Directive({
-  selector: '[ngxScrollDrag]',
-  host: {
-    '[style.user-select]': '"none"',
-    '[style.overflow-scrolling]': '"touch"',
-  }
+    selector: '[ngxScrollDrag]',
+    host: {
+        '[style.user-select]': '"none"',
+        '[style.overflow-scrolling]': '"touch"',
+    },
+    standalone: false
 })
 export class ScrollDragDirective implements OnInit, AfterViewInit, OnDestroy {
 

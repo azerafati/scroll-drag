@@ -1,7 +1,7 @@
-import { ScrollDragDirective } from './scroll-drag.directive'
-import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { Component, DebugElement, ElementRef, Renderer2 } from '@angular/core'
-import { By } from '@angular/platform-browser'
+import {ScrollDragDirective} from './scroll-drag.directive'
+import {ComponentFixture, TestBed} from '@angular/core/testing'
+import {Component, DebugElement, ElementRef, Renderer2} from '@angular/core'
+import {By} from '@angular/platform-browser'
 
 export class MockElementRef extends ElementRef {
   constructor() {
@@ -11,7 +11,8 @@ export class MockElementRef extends ElementRef {
 
 @Component({
   template: `
-    <div ngxScrollDrag></div>`
+    <div ngxScrollDrag></div>`,
+  standalone: false,
 })
 class TestComponent {
 }
